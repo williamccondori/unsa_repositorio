@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     // Use IntelliSense para saber los atributos posibles.
     // Mantenga el puntero para ver las descripciones de los existentes atributos 
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
@@ -57,11 +58,39 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
+=======
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Experimental: Current File (Integrated Terminal)",
+            "type": "pythonExperimental",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python Experimental: Attach",
+            "type": "pythonExperimental",
+            "request": "attach",
+            "port": 3000,
+            "host": "localhost"
+        },
+        {
+            "name": "Python Experimental: Django",
+            "type": "pythonExperimental",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "console": "integratedTerminal",
+>>>>>>> 14cffe540bab930b2caa19348e8cea4a5b5af04c
             "args": [
                 "runserver",
                 "--noreload",
                 "--nothreading"
             ],
+<<<<<<< HEAD
             "debugOptions": [
                 "RedirectOutput",
                 "Django"
@@ -70,6 +99,13 @@
         {
             "name": "Python: Flask (0.11.x or later)",
             "type": "python",
+=======
+            "django": true
+        },
+        {
+            "name": "Python Experimental: Flask",
+            "type": "pythonExperimental",
+>>>>>>> 14cffe540bab930b2caa19348e8cea4a5b5af04c
             "request": "launch",
             "module": "flask",
             "env": {
@@ -79,6 +115,7 @@
                 "run",
                 "--no-debugger",
                 "--no-reload"
+<<<<<<< HEAD
             ]
         },
         {
@@ -129,6 +166,17 @@
             "debugOptions": [
                 "RedirectOutput"
             ]
+=======
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Python Experimental: Current File (External Terminal)",
+            "type": "pythonExperimental",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
+>>>>>>> 14cffe540bab930b2caa19348e8cea4a5b5af04c
         }
     ]
 }
