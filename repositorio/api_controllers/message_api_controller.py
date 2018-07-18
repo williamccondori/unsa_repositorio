@@ -5,7 +5,9 @@ VERIFY_TOKEN = 'EAADTPsw1mMsBAKZBruRRrEOJ6HSkxeRKiZC0pM1LhUZCmSoBj94GmLBMlYykp5v
 
 class MessageApiController(View):
     def get(self, request, *args, **kwargs):
+        if len(self.request.GET) == 0:
+            return HttpResponse('Error, Parametros invalidos')
         if self.request.GET['hub.verify_token'] == '2318934571':
             return HttpResponse(self.request.GET['hub.challenge'])
         else:
-            return HttpResponse('Error, invalid token')
+            return HttpResponse('Error, Token invalido')
