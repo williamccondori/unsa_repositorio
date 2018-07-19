@@ -5,8 +5,10 @@ from django.utils.decorators import method_decorator
 
 from repositorio.dtos.response import Response
 from repositorio.services.calificador_service import CalificadorService
+from repositorio.dtos.calificador_dto import CalificadorDto
 
 import repositorio.helpers.parseador_json as encode
+
 
 class CalificadorApiController(View):
 
@@ -17,9 +19,13 @@ class CalificadorApiController(View):
     def post(self, request, *args, **kwargs):
         try:
             calificador_service = CalificadorService()
-            valoracion = request.POST.get('valoracion', 0)
-            ip = self.obtener_ip_cliente(request)
-            resultado = calificador_service.cafilicar_web(ip, valoracion)
+            calificador_dto = CalificadorDto()
+
+            json_data = encode.to_json_object(request.body)
+            calificador_dto.from_json(json_data)
+            calificador_dto.IpUsuario = self.obtener_ip_cliente(request)
+
+            resultado = calificador_service.cafilicar(calificador_dto)
             return JsonResponse(encode.to_json(
                 Response(datos=resultado)), safe=False)
         except Exception as e:
@@ -33,4 +39,3 @@ class CalificadorApiController(View):
         else:
             ip = request.META.get('REMOTE_ADDR')
         return ip
-

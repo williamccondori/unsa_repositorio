@@ -17,24 +17,18 @@ class Documento(models.Model):
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
 
 
-class ClienteWeb(models.Model):
-    Ip = models.CharField(max_length=32)
-
-
-class ClienteBot(models.Model):
-    Id = models.CharField(max_length=32)
-
-
-class TipoPuntuacion(models.Model):
-    id = models.CharField(max_length=2)
+class TipoCliente(models.Model):
+    id = models.CharField(max_length=2, primary_key=True)
     nombre = models.CharField(max_length=50)
+
+
+class Cliente(models.Model):
+    ip_usuario = models.CharField(max_length=32)
+    id_usuario = models.CharField(max_length=32)
+    tipo_cliente = models.ForeignKey(
+        TipoCliente, on_delete=models.CASCADE)
 
 
 class Puntuacion(models.Model):
     documento = models.ForeignKey(Documento, on_delete=models.CASCADE)
-    tipo_puntuacion = models.ForeignKey(
-        TipoPuntuacion, on_delete=models.CASCADE)
-    cliente_web = models.ForeignKey(
-        ClienteWeb, on_delete=models.CASCADE, blank=True, null=True)
-    cliente_bot = models.ForeignKey(
-        ClienteBot, on_delete=models.CASCADE, blank=True, null=True)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
