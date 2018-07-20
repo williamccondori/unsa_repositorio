@@ -25,7 +25,11 @@ SECRET_KEY = 'ph^1g*9r&&k#wsn$7%&05j0v14j6y*zo4a0g4q#hdhv^r7tryo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ebae70bd.ngrok.io', '127.0.0.1', '127.0.0.1.xip.io']
+ALLOWED_HOSTS = [
+    'ebae70bd.ngrok.io', 
+    '127.0.0.1', '127.0.0.1.xip.io',
+    'unsa-repositorio-staging.herokuapp.com'
+]
 
 
 # Application definition
@@ -141,8 +145,7 @@ CORS_ORIGIN_WHITELIST = (
     'google.com',
     'hostname.example.com',
     'localhost:4200',
-    '127.0.0.1:9000',
-    'unsa-repositorio-staging.herokuapp.com'
+    '127.0.0.1:9000'
 )
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
