@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'ebae70bd.ngrok.io', 
     '127.0.0.1', '127.0.0.1.xip.io',
-    'unsa-repositorio-staging.herokuapp.com'
+    'unsa-repositorio-staging.herokuapp.com',
+    'unsa-repositorio-prod.herokuapp.com'
 ]
 
 
