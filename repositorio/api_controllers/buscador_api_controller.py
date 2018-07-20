@@ -20,4 +20,4 @@ class BuscadorApiController(View):
                 Response(estado=False, mensaje=str(e))), safe=False)
 
     def post(self, request, *args, **kwargs):
-        return ''
+        return 'No se encuentra'
