@@ -141,7 +141,8 @@ CORS_ORIGIN_WHITELIST = (
     'google.com',
     'hostname.example.com',
     'localhost:4200',
-    '127.0.0.1:9000'
+    '127.0.0.1:9000',
+    'unsa-repositorio-staging.herokuapp.com'
 )
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
