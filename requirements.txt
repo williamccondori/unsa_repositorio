@@ -1,0 +1,8 @@
+Django==2.0.7
+django-cors-headers==2.4.0
+django-storages==1.6.6
+gunicorn==19.9.0
+pkg-resources==0.0.0
+psycopg2==2.7.5
+pytz==2018.5
+whitenoise==3.3.1
