@@ -6,16 +6,7 @@ from repositorio.dtos.tipo_cliente_dto import TipoClienteDto
 
 class CalificadorService(object):
 
-    def cafilicar(self, calificador_dto)
-
-        # Verificar si existe cliente.
-        
-        # Ingresar cliente.
-
-        puntuacion = Puntuacion(
-            
-        )
-        puntuacion.save()
+    def cafilicar(self, calificador_dto):
         return True
 
     def verificar_usuario(self, calificador_dto):
