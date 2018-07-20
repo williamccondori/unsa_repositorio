@@ -1,0 +1,16 @@
+{
+  "name": "unsa_repositorio",
+  "scripts": {
+    "postdeploy": "python manage.py migrate --noinput"
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
