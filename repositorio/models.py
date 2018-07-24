@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 class Autor(models.Model):
     nombre = models.CharField(max_length=100)
@@ -16,6 +16,8 @@ class Documento(models.Model):
     url = models.CharField(max_length=300)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
 
+    def get_absolute_url(self):
+        return reverse('document-detail', kwargs={'pk': self.pk})
 
 class TipoCliente(models.Model):
     id = models.CharField(max_length=2, primary_key=True)

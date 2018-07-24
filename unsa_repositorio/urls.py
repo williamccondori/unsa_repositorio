@@ -1,5 +1,4 @@
 """unsa_repositorio URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
 Examples:
@@ -15,8 +14,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('', views.index),
+    path('admin/', admin.site.urls),
     path('repositorio/', include('repositorio.urls')) # Se agrega urls para la aplicacion repositorio.
 ]
