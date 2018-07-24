@@ -1,11 +1,15 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from repositorio.models import Documento
 
 class DocumentListView(ListView):
     model = Documento
     template_name = 'document/list.html'
+
+class DocumentDetailView(DetailView):
+    model = Documento
+    template_name = 'document/detail.html'
 
 class DocumentCreate(CreateView):
     model = Documento

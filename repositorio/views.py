@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
-
 def dashboard(request):
-    return HttpResponse("Bienvenido!")
+    return render(request, 'admin/dashboard.html')
+
+def manage(request):
+    return render(request, 'admin/manage.html')

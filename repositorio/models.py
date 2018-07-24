@@ -8,6 +8,11 @@ class Autor(models.Model):
     dina = models.CharField(max_length=300)
     web = models.CharField(max_length=300)
 
+    def __str__(self):
+        return self.apellido + ', ' + self.nombre
+
+    class Meta:
+        ordering = ['apellido']
 
 class Documento(models.Model):
     titulo = models.CharField(max_length=300)

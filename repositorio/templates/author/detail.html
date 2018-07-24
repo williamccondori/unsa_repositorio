@@ -1,0 +1,15 @@
+{% extends "layout.html" %} 
+{% block title %}Autores{% endblock %} 
+{% block content %}
+<h1>Autor: {{ autor }}</h1>
+
+<p><strong>Nombre:</strong> {{ autor.nombre }}</p> 
+<p><strong>Apellido:</strong> {{ autor.apellido }}</p>
+<p><strong>Email:</strong> {{ autor.email }}</p>
+<!--
+<p><strong>ISBN:</strong> {{ book.isbn }}</p> 
+<p><strong>Language:</strong> {{ book.language }}</p>  
+<p><strong>Genre:</strong> {% for genre in book.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
+-->
+
+{% endblock %}

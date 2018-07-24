@@ -1,0 +1,20 @@
+{% extends "layout.html" %} 
+{% block title %}Gestión{% endblock %} 
+{% block content %}
+
+<section>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{% url 'dashboard' %}">Inicio</a>
+        </li>
+        <li class="active">Gestión</li>
+    </ol>
+    <h1>Gestión</h1>
+    <hr>
+    <div class="list-group">
+        <a href="{% url 'author-list' %}" class="list-group-item">Gestionar autores</a>
+        <a href="{% url 'document-list' %}" class="list-group-item">Gestionar documentos</a>
+    </div>
+</section>
+
+{% endblock %}
