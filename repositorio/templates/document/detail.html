@@ -14,17 +14,22 @@
     </ol>
     <h1>Documentos</h1>
     <hr>
-
-    <h1>Título: {{ documento.titulo }}</h1>
-
     <p>
-        <strong>Autor:</strong>
+        <b>Título: </b>
+        <span>{{ documento.titulo }}</span>
+    </p>
+    <p>
+        <strong>Autor: </strong>
         <a href="{% url 'author-detail' documento.autor.pk %}">{{ documento.autor }}</a>
     </p>
-    <!-- author detail link not yet defined -->
     <p>
-        <strong>Resumen:</strong> {{ documento.resumen }}</p>
-
+        <strong>Año: </strong> 
+        <span>{{ documento.anio }}</span>
+    </p>
+    <p>
+        <strong>Resumen: </strong> 
+        <span>{{ documento.resumen }}</span>
+    </p>
     <!--
     <p><strong>ISBN:</strong> {{ book.isbn }}</p> 
     <p><strong>Language:</strong> {{ book.language }}</p>  
