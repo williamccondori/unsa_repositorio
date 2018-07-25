@@ -5,28 +5,31 @@
 <section>
     <ol class="breadcrumb">
         <li>
-          <a href="{% url 'dashboard' %}">Inicio</a>
+            <a href="{% url 'dashboard' %}">Inicio</a>
         </li>
         <li>
-          <a href="{% url 'manage' %}">Gestión</a>
+            <a href="{% url 'manage' %}">Gestión</a>
         </li>
         <li class="active">Documentos</li>
-      </ol>
-      <h1>Documentos</h1>
-      <hr>
-    
-      <h1>Título: {{ documento.titulo }}</h1>
+    </ol>
+    <h1>Documentos</h1>
+    <hr>
 
-<p><strong>Autor:</strong> 
-    <a href="{% url 'author-detail' documento.autor.pk %}">{{ documento.autor }}</a></p> 
-<!-- author detail link not yet defined -->
-<p><strong>Resumen:</strong> {{ documento.resumen }}</p>
+    <h1>Título: {{ documento.titulo }}</h1>
 
-<!--
-<p><strong>ISBN:</strong> {{ book.isbn }}</p> 
-<p><strong>Language:</strong> {{ book.language }}</p>  
-<p><strong>Genre:</strong> {% for genre in book.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
--->
+    <p>
+        <strong>Autor:</strong>
+        <a href="{% url 'author-detail' documento.autor.pk %}">{{ documento.autor }}</a>
+    </p>
+    <!-- author detail link not yet defined -->
+    <p>
+        <strong>Resumen:</strong> {{ documento.resumen }}</p>
+
+    <!--
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p> 
+    <p><strong>Language:</strong> {{ book.language }}</p>  
+    <p><strong>Genre:</strong> {% for genre in book.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
+    -->
 
 {% endblock %}
 
