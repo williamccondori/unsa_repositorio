@@ -1,0 +1,17 @@
+{% extends "layout.html" %} 
+{% block title %}Autores{% endblock %} 
+{% block content %}
+<section>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{% url 'dashboard' %}">Inicio</a>
+        </li>
+        <li>
+            <a href="{% url 'manage' %}">Gestión</a>
+        </li>
+        <li class="active">Autores</li>
+    </ol>
+    <h1>Autores</h1>
+    <hr>
+</section>
+{% endblock %}
