@@ -1,19 +1,28 @@
-{% extends "layout.html" %} 
-{% block title %}Gestión{% endblock %} 
-{% block content %}
+{% extends "layout.html" %} {% block title %}Gestión{% endblock %} {% block content %}
 
 <section>
+    <div class="well app-titulo">
+        <h1>Gestión</h1>
+    </div>
     <ol class="breadcrumb">
         <li>
             <a href="{% url 'dashboard' %}">Inicio</a>
         </li>
-        <li class="active">Gestión</li>
+        <li class="active"><span>Gestión</span></li>
     </ol>
-    <h1>Gestión</h1>
-    <hr>
-    <div class="list-group">
-        <a href="{% url 'author-list' %}" class="list-group-item">Gestionar autores</a>
-        <a href="{% url 'document-list' %}" class="list-group-item">Gestionar documentos</a>
+
+    <div class="row">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="panel-title">Gestión de información</span>
+                </div>
+                <div class="list-group">
+                    <a href="{% url 'author-list' %}" class="list-group-item">Gestión de autores</a>
+                    <a href="{% url 'document-list' %}" class="list-group-item">Gestión de trabajos de investigación</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

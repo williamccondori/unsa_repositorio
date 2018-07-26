@@ -8,6 +8,11 @@
   font-size: 1em;
 }
 
+.panel .panel-heading {
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
 .panel .panel-heading .panel-title {
   font-size: 1em;
   font-weight: bolder;
