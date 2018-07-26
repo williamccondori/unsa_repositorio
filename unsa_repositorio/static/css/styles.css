@@ -1,0 +1,36 @@
+.jumbotron h1 {
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.jumbotron p {
+  font-size: 1em;
+}
+
+.panel .panel-heading .panel-title {
+  font-size: 1em;
+  font-weight: bolder;
+}
+
+.table thead tr th:last-child {
+  width: 15%;
+  text-align: center;
+}
+
+.table tbody tr td:last-child {
+  width: 15%;
+  text-align: center;
+}
+
+.app-titulo {
+  text-align: center;
+}
+
+.app-titulo h1 {
+  margin: 0 10px 0 10px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+/*# sourceMappingURL=styles.css.map */
