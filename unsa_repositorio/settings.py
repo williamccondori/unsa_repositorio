@@ -15,6 +15,9 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Gets the environment variables
+
+# os.environ['DJANGO_SETTINGS_MODULE'] = 'unsa_repositorio.settings'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -27,7 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'ebae70bd.ngrok.io', 
-    '127.0.0.1', '127.0.0.1.xip.io',
+    '127.0.0.1', 
+    '127.0.0.1.xip.io',
     'unsa-repositorio-staging.herokuapp.com',
     'unsa-repositorio-prod.herokuapp.com'
 ]
@@ -123,24 +127,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
-
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'google.com',
@@ -149,4 +135,19 @@ CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:9000'
 )
 
+# Amazon S3
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL= '/static/'
+
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_BUCKET_NAME')
+AWS_S3_REGION_NAME = 'sa-east-1'
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)

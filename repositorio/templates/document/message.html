@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block title %}Gestión de trabajos de investigación{% endblock %} {% block content %}
+
+<section>
+    <div class="well app-titulo">
+        <h1>Gestión de trabajos de investigación</h1>
+    </div>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{% url 'dashboard' %}">Inicio</a>
+        </li>
+        <li>
+            <a href="{% url 'manage' %}">Gestión</a>
+        </li>
+        <li class="active">Gestión de trabajos de investigación</li>
+    </ol>
+    
+    
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Correcto!</strong> El registro se ha agregado exitosamente!
+    </div>
+    
+
+</section>
+
+{% endblock %}

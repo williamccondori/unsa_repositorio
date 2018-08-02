@@ -1,7 +1,11 @@
 {% extends "layout.html" %} 
 {% block title %}Documentos{% endblock %} 
 {% block content %}
+
 <section>
+    <div class="well app-titulo">
+        <h1>Gestión de trabajos de investigación</h1>
+    </div>
     <ol class="breadcrumb">
         <li>
             <a href="{% url 'dashboard' %}">Inicio</a>
@@ -9,9 +13,47 @@
         <li>
             <a href="{% url 'manage' %}">Gestión</a>
         </li>
-        <li class="active">Documentos</li>
+        <li class="active">Gestión de trabajos de investigación</li>
     </ol>
-    <h1>Documentos</h1>
-    <hr>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">Ingrese los datos correspondientes</span>
+        </div>
+        <div class="panel-body">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Título:</label>
+                    <input type="text" class="form-control" name="title">
+                </div>
+                <div class="form-group">
+                    <label>Autor:</label>
+                    <select class="form-control" name="author_id">
+                            {% for author in authors %}
+                          <option value="{{ author.id }}"><span>{{ author }}</span></option>
+                            {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                        <label>Año:</label>
+                        <input type="text" class="form-control" name="year">
+                    </div>
+                <div class="form-group">
+                    <label>Resumen:</label>
+                    <textarea cols="30" rows="10" class="form-control" name="summary"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Documento</label>
+                    <input type="file" class="form-control" name="document_file">
+                </div>
+                <div class="form-group">
+                    <a href="{% url 'document-list' %}" class="btn btn-primary">Regresar</a>
+                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span> Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </section>
+
 {% endblock %}

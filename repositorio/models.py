@@ -18,7 +18,7 @@ class Documento(models.Model):
     titulo = models.CharField(max_length=300)
     anio = models.IntegerField()
     resumen = models.TextField()
-    url = models.CharField(max_length=300)
+    url = models.FileField()
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
 
     def get_absolute_url(self):

@@ -13,7 +13,7 @@ urlpatterns = [
     # Document urls
     path('document/', DocumentListView.as_view(), name='document-list'),
     path('document/<int:pk>/', DocumentDetailView.as_view(), name='document-detail'),
-    path('document/add/', DocumentCreate.as_view(), name='document-add'),
+    path('document/create/', DocumentCreate.as_view(), name='document-create'),
     path('document/<int:pk>/update/', DocumentUpdate.as_view(), name='document-update'),
     path('document/<int:pk>/delete/', DocumentDelete.as_view(), name='document-delete'),
 

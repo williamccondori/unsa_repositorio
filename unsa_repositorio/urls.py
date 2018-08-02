@@ -17,7 +17,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index),
+    path('', include('repositorio.urls')),
     path('admin/', admin.site.urls),
-    path('repositorio/', include('repositorio.urls')) # Se agrega urls para la aplicacion repositorio.
 ]
